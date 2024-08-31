@@ -29,6 +29,11 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Fontawesome -->
+  <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+
   <!-- =======================================================
   * Template Name: Kelly
   * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
