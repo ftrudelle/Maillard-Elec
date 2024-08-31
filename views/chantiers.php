@@ -17,7 +17,7 @@
       <!-- End WorkSite Filters -->
       <!-- WorkSite Items List -->
       <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-        <?php include('views/chantiers_article.php'); ?>
+        <?php include('views/chantiers_articles.php'); ?>
       </div>
       <!-- End WorkSite Items List -->
     </div>
