@@ -13,23 +13,23 @@
             <?php if (basename($_SERVER['SCRIPT_FILENAME']) == "index.php") {
                 echo '<ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Chantiers</a></li>
+                <li><a href="#worksite">Chantiers</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>';
             } else {
                 echo '<ul>
                 <li><a href="../index.php#services">Services</a></li>
-                <li><a href="../index.php#portfolio">Chantiers</a></li>
+                <li><a href="../index.php#worksite">Chantiers</a></li>
                 <li><a href="../index.php#contact">Contact</a></li>
             </ul>';
             } ?>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
         <div class="header-social-links">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <!-- <a href="#" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a> -->
+            <a href="#" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <!-- <a href="#" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a> -->
+            <!-- <a href="#" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a> -->
         </div>
     </div>
 </header>

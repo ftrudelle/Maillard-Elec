@@ -18,13 +18,12 @@ foreach ($worksites as $worksite) {
 
   //Récupération des images du chantier
   $worksite_images = glob($worksite_subfolder[1] . '/*');
-
   // Envoi des articles de chantier dans la page
-  echo '<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-' . strtolower($worksite_description->categorie) . '">
+  echo '<div class="col-lg-4 col-md-6 worksite-item isotope-item filter-' . strtolower($worksite_description->categorie) . '">
         <img src="' . $worksite_images[0] . '" class="img-fluid" alt="">
-        <div class="portfolio-info">
+        <div class="worksite-info">
           <h4>' . $worksite_description->titre . '</h4>
-          <a class="details-link" href="views/test.php?description=' . $worksite_subfolder[0] . '&images=' . $worksite_subfolder[1] . '" title="Plus de détails"><i class="bi bi-link-45deg"></i></a>
+          <a class="details-link" href="views/chantier-details.php?description=' . $worksite_subfolder[0] . '&images=' . $worksite_subfolder[1] . '" data-toggle="modal" data-target="#worksiteDetailModal" title="Plus de détails"><i class="fa-solid fa-plus"></i></a>
         </div>
       </div>';
 }

@@ -1,5 +1,5 @@
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
+<!-- WorkSite Section -->
+<section id="worksite" class="worksite section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Chantiers</h2>
@@ -8,19 +8,19 @@
   <!-- End Section Title -->
   <div class="container">
     <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-      <!-- Portfolio Filters -->
-      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+      <!-- WorkSite Filters -->
+      <ul class="worksite-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
         <li data-filter="*" class="filter-active">Tous</li>
         <li data-filter=".filter-habitation">Habitation</li>
         <li data-filter=".filter-tertiaire">Tertiaire</li>
       </ul>
-      <!-- End Portfolio Filters -->
-      <!-- Portfolio Items List -->
+      <!-- End WorkSite Filters -->
+      <!-- WorkSite Items List -->
       <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-        <?php include('chantiers_article.php'); ?>
+        <?php include('views/chantiers_article.php'); ?>
       </div>
-      <!-- End Portfolio Items List -->
+      <!-- End WorkSite Items List -->
     </div>
-</div>
+  </div>
 </section>
-<!-- /Portfolio Section -->
+<!-- /WorkSite Section -->

@@ -5,10 +5,10 @@
             </p>
         </div>
         <div class="social-links d-flex justify-content-center">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <!-- <a href="" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a> -->
+            <a href="" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <!-- <a href="" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a> -->
+            <!-- <a href="" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a> -->
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->

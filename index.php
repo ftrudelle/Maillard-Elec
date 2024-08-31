@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Maillard Electricité</title>
+  <title></title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -41,16 +42,32 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 <body class="index-page">
   <?php include('views/header.php'); ?>
 
   <main class="main">
     <!-- Services section -->
     <?php include('views/services.php'); ?>
-    <!-- Portfolio section -->
+    <!-- worksite section -->
     <?php include('views/chantiers.php'); ?>
     <!-- Contact section -->
     <?php include('views/contact.php'); ?>
+
+    <!-- Worksite Details Modal -->
+    <div id="worksiteDetailModal" class="modal modal-xl fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h1 class="modal-title"></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- HTML will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <?php include('views/footer.php'); ?>
@@ -79,8 +96,10 @@
   <script src="data/info.js"></script>
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', event => {
-      // Activate Bootstrap scrollspy on the main nav element
-      console.log(document.body.querySelector('#navmenu'));
+      //Place variables from info.js
+      document.title = info.entreprise;
+      $(".facebook").attr('href', info.facebook);
+      //Activate Bootstrap scrollspy on the main nav element
       const navMenu = document.body.querySelector('#navmenu');
       if (navMenu) {
         new bootstrap.ScrollSpy(document.body, {
@@ -88,11 +107,39 @@
         });
       };
     });
-
-    $("#details-link").click(function(e){
+    //Load selected worksite details content in modal
+    $(".details-link").on('click', function(e) {
       e.preventDefault();
-      
+      //Recovery of selected workiste details url
+      var url = $(this).attr("href");
+      $.ajax({
+        url: url,
+        type: 'post',
+        async: 'false',
+        success: function(response) {
+          //Adding workwite title in modal title
+          $(".modal-title").html(<?php echo json_encode($worksite_description->titre); ?>);
+          //Adding details text in modal body
+          $('.modal-body').html(response);
+          $('#worksiteDetailModal').modal('show');
+          //Initializing of swipper
+          const swiper = new Swiper('.swiper', {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          });
+        }
+      });
     });
   </script>
 </body>
+
 </html>
