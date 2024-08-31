@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -35,24 +34,19 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
 <body class="about-page">
 
-  <?php include('header.php'); ?>
+  <?php include('views/header.php'); ?>
 
   <main class="main">
-
     <!-- About Section -->
     <section id="about" class="about section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
@@ -87,138 +81,119 @@
             </p>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /About Section -->
-
+    </section>
+    <!-- /About Section -->
     <!-- Skills Section -->
     <section id="skills" class="skills section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row skills-content skills-animation">
-
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
             <div class="progress">
               <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
             <div class="progress">
               <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
           </div>
-
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
             <div class="progress">
               <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
             <div class="progress">
               <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
+            <!-- End Skills Item -->
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Skills Section -->
-
+    </section>
+    <!-- /Skills Section -->
     <!-- Stats Section -->
     <section id="stats" class="stats section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Facts</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
+      </div>
+      <!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
               <p>Clients</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
+          <!-- End Stats Item -->
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
+          <!-- End Stats Item -->
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hours Of Support</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
+          <!-- End Stats Item -->
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
               <p>Workers</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
+          <!-- End Stats Item -->
         </div>
-
       </div>
-
-    </section><!-- /Stats Section -->
-
+    </section>
+    <!-- /Stats Section -->
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
+      </div>
+      <!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -236,7 +211,6 @@
             }
           </script>
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -251,8 +225,8 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <!-- End testimonial item -->
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -267,8 +241,8 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <!-- End testimonial item -->
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -283,8 +257,8 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <!-- End testimonial item -->
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -299,8 +273,8 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <!-- End testimonial item -->
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
@@ -315,18 +289,16 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-
-    </section><!-- /Testimonials Section -->
+    </section>
+    <!-- /Testimonials Section -->
   </main>
-
-  <?php include('footer.php'); ?>
+  <?php include('views/footer.php'); ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -359,7 +331,5 @@
       console.log($('#navmenu a:contains("A propos")').html());
     }
   </script>
-
 </body>
-
 </html>

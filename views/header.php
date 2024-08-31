@@ -3,14 +3,26 @@
         <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!--<h1 class="sitename">Kelly</h1>-->
-            <img src="assets/img/logo.png" alt="">
+            <?php if (basename($_SERVER['SCRIPT_FILENAME']) == "index.php") {
+                echo '<img src="assets/img/logo.png" alt="">';
+            } else {
+                echo '<img src="../assets/img/logo.png" alt="">';
+            } ?>
         </a>
         <nav id="navmenu" class="navmenu">
-            <ul>
+            <?php if (basename($_SERVER['SCRIPT_FILENAME']) == "index.php") {
+                echo '<ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Chantiers</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>
+            </ul>';
+            } else {
+                echo '<ul>
+                <li><a href="../index.php#services">Services</a></li>
+                <li><a href="../index.php#portfolio">Chantiers</a></li>
+                <li><a href="../index.php#contact">Contact</a></li>
+            </ul>';
+            } ?>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
         <div class="header-social-links">

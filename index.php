@@ -44,18 +44,18 @@
 </head>
 
 <body class="index-page">
-  <?php include('header.php'); ?>
+  <?php include('views/header.php'); ?>
 
   <main class="main">
     <!-- Services section -->
-    <?php include('services.php'); ?>
+    <?php include('views/services.php'); ?>
     <!-- Portfolio section -->
-    <?php include('chantiers.php'); ?>
+    <?php include('views/chantiers.php'); ?>
     <!-- Contact section -->
-    <?php include('contact.php'); ?>
+    <?php include('views/contact.php'); ?>
   </main>
 
-  <?php include('footer.php'); ?>
+  <?php include('views/footer.php'); ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -86,8 +86,7 @@
       const navMenu = document.body.querySelector('#navmenu');
       if (navMenu) {
         new bootstrap.ScrollSpy(document.body, {
-          target: '#navmenu',
-          //rootMargin: '0px 0px -40%',
+          target: '#navmenu'
         });
       };
     });
