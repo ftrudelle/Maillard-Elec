@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -42,7 +41,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
 <body class="index-page">
   <?php include('views/header.php'); ?>
 
@@ -90,7 +88,11 @@
         });
       };
     });
+
+    $("#details-link").click(function(e){
+      e.preventDefault();
+      
+    });
   </script>
 </body>
-
 </html>
