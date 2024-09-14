@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title></title>
+  <title><?php echo json_decode(file_get_contents("./data/info.json"))->entrepriseName; ?></title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -93,12 +93,8 @@
   <!-- Main JS File -->
   <script src="assets/js/jquery-3.7.1.min.js"></script>
   <script src="assets/js/main.js" defer></script>
-  <script src="data/info.js"></script>
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', event => {
-      //Place variables from info.js
-      document.title = info.entreprise;
-      $(".facebook").attr('href', info.facebook);
       //Activate Bootstrap scrollspy on the main nav element
       const navMenu = document.body.querySelector('#navmenu');
       if (navMenu) {
