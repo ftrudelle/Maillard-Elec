@@ -81,7 +81,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -135,6 +134,23 @@
         }
       });
     });
+    //Send Email
+    $("#phpEmailFormSubmitButton").on("click", function(e) {
+      e.preventDefault();
+      var formData = $(".php-email-form").serialize();
+      console.log(formData);
+      $.ajax({
+        type: "POST",
+        url: "forms/contact.php",
+        dataType: "json", // Add datatype
+        data: formData
+      }).done(function(data) {
+        console.log(data);
+        alert("It's OK!");
+      }).fail(function(data) {
+        console.log(data);
+      });
+  });
   </script>
 </body>
 

@@ -1,83 +1,59 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  /*$receiving_email_address = 'YOUR_SPECIFIED_EMAIL_ADDRESS';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+require '../assets/vendor/PHPMailer-6.9.1/src/Exception.php';
+require '../assets/vendor/PHPMailer-6.9.1/src/PHPMailer.php';
+require '../assets/vendor/PHPMailer-6.9.1/src/SMTP.php';
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];*/
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+$mail->setLanguage('fr', '../assets/vendor/PHPMailer-6.9.1/language/phpmailer.lang-fr.php/');
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+if (isset($_POST["submit"])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
 
-  /*$contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+  try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;               //Enable verbose debug output
+    $mail->isSMTP();                                     //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                            //Enable SMTP authentication
+    $mail->Username   = json_decode(file_get_contents("./data/info.json"))->emailTest;    //SMTP username
+    $mail->Password   = 'eqxq kuyi nalh nhfg';           //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;     //Enable implicit TLS encryption
+    $mail->Port       = 465;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-  echo $contact->send();*/
+    $headers = "Content-type: text/html; charset=utf-8 \r\nFrom:" . $email . "\r\n";
+    // WARNING: Be sure to change this. This is the address that the email will be sent to
+    $to = json_decode(file_get_contents("./data/info.json"))->emailTest;
+    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
 
-  if (isset($_POST["submit"])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-    $subject = $_POST['subject'];
-		$message = $_POST['message'];
-		//$human = intval($_POST['human']);
-		$from = $email; 
-		
-		// WARNING: Be sure to change this. This is the address that the email will be sent to
-		$to = 'trudelle.florian@gmail.com'; 
-		
-		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
- 
-		// Check if name has been entered
-		if (!$_POST['name']) {
-			$errName = 'Please enter your name';
-		}
-		
-		// Check if email has been entered and is valid
-		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			$errEmail = 'Please enter a valid email address';
-		}
-		
-		//Check if message has been entered
-		if (!$_POST['message']) {
-			$errMessage = 'Please enter your message';
-		}
-		//Check if simple anti-bot test is correct
-		/*if ($human !== 5) {
-			$errHuman = 'Your anti-spam is incorrect';
-		}*/
- 
-  // If there are no errors, send the email
-  if (!$errName && !$errEmail && !$errMessage){ //&& !$errHuman) {
-	  if (mail ($to, $subject, $body, $from)) {
-		  $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-	  } else {
-		  $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
-	  }
+    //Recipients
+    $mail->setFrom($email, 'Mailer');
+    $mail->addAddress($to);
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                     //Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $body;
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+  } catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
   }
 }
-?>

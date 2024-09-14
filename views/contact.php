@@ -41,35 +41,29 @@
         </div>
       </div>
       <div class="col-lg-7">
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
-
             <div class="col-md-6">
               <label for="name-field" class="pb-2">Votre nom</label>
               <input type="text" name="name" id="name-field" class="form-control" required="">
             </div>
-
             <div class="col-md-6">
               <label for="email-field" class="pb-2">Votre email</label>
               <input type="email" class="form-control" name="email" id="email-field" required="">
             </div>
-
             <div class="col-md-12">
-              <label for="subject-field" class="pb-2">Suject</label>
+              <label for="subject-field" class="pb-2">Sujet</label>
               <input type="text" class="form-control" name="subject" id="subject-field" required="">
             </div>
-
             <div class="col-md-12">
               <label for="message-field" class="pb-2">Message</label>
               <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
             </div>
-
             <div class="col-md-12 text-center">
-              <div class="loading">Chargement</div>
+              <!-- <div class="loading">Chargement</div>
               <div class="error-message"></div>
-              <div class="sent-message">Votre message à été envoyé. Merci !</div>
-
-              <button type="submit">Envoyer</button>
+              <div class="sent-message">Votre message à été envoyé. Merci !</div> -->
+              <button type="submit" id="phpEmailFormSubmitButton">Envoyer</button>
             </div>
           </div>
         </form>
