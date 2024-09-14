@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -105,14 +105,14 @@
   <script src="assets/js/main.js"></script>
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', event => {
-        //Activate Bootstrap scrollspy on the main nav element
-        const navMenu = document.body.querySelector('#navmenu');
-        if (navMenu) {
-          new bootstrap.ScrollSpy(document.body, {
-            target: '#navmenu'
-          });
-        };
-      });
+      //Activate Bootstrap scrollspy on the main nav element
+      const navMenu = document.body.querySelector('#navmenu');
+      if (navMenu) {
+        new bootstrap.ScrollSpy(document.body, {
+          target: '#navmenu'
+        });
+      };
+    });
     $(document).ready(function() {
       //Load selected worksite details content in modal
       $(".details-link").on('click', function(e) {

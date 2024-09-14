@@ -1,0 +1,4 @@
+bleu foncé #293388
+bleu clair #009ADA
+orange foncé #C65E45
+orange clair #EE840E

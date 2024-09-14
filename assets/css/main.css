@@ -22,15 +22,20 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #222222; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #34b7a7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  /*--accent-color: #34b7a7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color-bar: #C65E45;
+  --accent-color-button: #EE840E;
+  --accent-color: #283385;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #444444;  /* The default color of the main navmenu links */
-  --nav-hover-color: #34b7a7; /* Applied to main navmenu links when they are hovered over or active */
+  /*--nav-color: #444444;  /* The default color of the main navmenu links */
+  --nav-color: #283385;
+  /*--nav-hover-color: #34b7a7; /*Applied to main navmenu links when they are hovered over or active*/
+  --nav-hover-color: #009ADA;
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -563,7 +568,8 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
+  background-color: var(--accent-color-button);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -676,7 +682,8 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: var(--accent-color-bar);
   left: 0;
   right: 0;
   bottom: 0;
@@ -687,7 +694,7 @@ section,
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
+/*--------------------------------------------------------------F
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
@@ -1191,7 +1198,8 @@ section,
 .worksites .worksites-filters li:hover,
 .worksites .worksites-filters li.filter-active {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
+  background-color: var(--accent-color-button);
 }
 
 .worksites .worksites-filters li:first-child {
@@ -1348,7 +1356,8 @@ section,
 
 .contact .info-item i {
   font-size: 20px;
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
+  color: var(--accent-color-button);
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
   width: 44px;
   height: 44px;
@@ -1374,7 +1383,8 @@ section,
 }
 
 .contact .info-item:hover i {
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: var(--accent-color-button);
   color: var(--contrast-color);
 }
 
@@ -1417,7 +1427,8 @@ section,
 
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
+  background: var(--accent-color-button);
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
