@@ -43,18 +43,28 @@
   ======================================================== -->
 </head>
 
-<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+<body>
   <?php include('views/header.php'); ?>
 
   <main class="main">
-    <!-- Services section -->
-    <?php include('views/services.php'); ?>
-    <!-- worksite section -->
-    <?php include('views/chantiers.php'); ?>
-    <!-- Contact section -->
-    <?php include('views/contact.php'); ?>
-
-    <!-- Worksite Details Modal -->
+    <div class="section-container">
+      <!-- Services section -->
+      <section id="services" class="services section">
+        <?php include('views/services.php'); ?>
+      </section>
+      <!-- End Services section -->
+      <!-- Worksites section -->
+      <section id="worksites" class="worksites section">
+        <?php include('views/worksites.php'); ?>
+      </section>
+      <!-- End worksites section -->
+      <!-- Contact section -->
+      <section id="contact" class="contact section">
+        <?php include('views/contact.php'); ?>
+      </section>
+      <!-- End contact section -->
+    </div>
+    <!-- Worksite details modal -->
     <div id="worksiteDetailModal" class="modal modal-xl fade" role="dialog">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -68,6 +78,7 @@
         </div>
       </div>
     </div>
+    <!-- End worksite details modal -->
   </main>
 
   <?php include('views/footer.php'); ?>
@@ -91,78 +102,80 @@
 
   <!-- Main JS File -->
   <script src="assets/js/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js"></script>
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', event => {
-      //Activate Bootstrap scrollspy on the main nav element
-      const navMenu = document.body.querySelector('#navmenu');
-      if (navMenu) {
-        new bootstrap.ScrollSpy(document.body, {
-          target: '#navmenu'
-        });
-      };
-    });
-    //Load selected worksite details content in modal
-    $(".details-link").on('click', function(e) {
-      e.preventDefault();
-      //Recovery of selected workiste details url
-      var url = $(this).attr("href");
-      $.ajax({
-        url: url,
-        type: 'post',
-        async: 'false',
-        success: function(response) {
-          //Adding workwite title in modal title
-          $(".modal-title").html(<?php echo json_encode($worksite_description->titre); ?>);
-          //Adding details text in modal body
-          $('.modal-body').html(response);
-          $('#worksiteDetailModal').modal('show');
-          //Initializing of swipper
-          const swiper = new Swiper('.swiper', {
-            "loop": true,
-            "speed": 600,
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "pagination": {
-              "el": ".swiper-pagination",
-              "type": "bullets",
-              "clickable": true
-            }
+        //Activate Bootstrap scrollspy on the main nav element
+        const navMenu = document.body.querySelector('#navmenu');
+        if (navMenu) {
+          new bootstrap.ScrollSpy(document.body, {
+            target: '#navmenu'
           });
-        }
+        };
       });
-    });
-    //Send Email
-    $(".php-email-form").on("submit", function(e) {
-      e.preventDefault();
-      var formData = $(".php-email-form").serialize();
-      $.ajax({
-        type: "POST",
-        url: "forms/contact.php",
-        dataType: "json", // Add datatype
-        data: formData,
-        statusCode: {
-          500: function() {
-            $(".error-message").html("Désolé, quelque chose s'est mal passé. Veuillez réessayer plus tard.").show();
-          }
-        },
-        success: function(data) {
-          console.log(data);
-          //Successfully send message
-          if (data.status) {
-            //Display successful message
-            $(".sent-message").html(data.message).show();
-            //Reset form inputs
-            $(".php-email-form").each(function() {
-              this.reset();
+    $(document).ready(function() {
+      //Load selected worksite details content in modal
+      $(".details-link").on('click', function(e) {
+        e.preventDefault();
+        //Recovery of selected workiste details url
+        var url = $(this).attr("href");
+        $.ajax({
+          url: url,
+          type: 'post',
+          async: 'false',
+          success: function(response) {
+            //Adding workwite title in modal title
+            $(".modal-title").html(<?php echo json_encode($worksite_description->titre); ?>);
+            //Adding details text in modal body
+            $('.modal-body').html(response);
+            $('#worksiteDetailModal').modal('show');
+            //Initializing of swipper
+            const swiper = new Swiper('.swiper', {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
             });
-          } else {
-            //Display error message
-            $(".error-message").html(data.message).show();
           }
-        }
+        });
+      });
+      //Send Email
+      $(".php-email-form").on("submit", function(e) {
+        e.preventDefault();
+        var formData = $(".php-email-form").serialize();
+        $.ajax({
+          type: "POST",
+          url: "forms/contact.php",
+          dataType: "json", // Add datatype
+          data: formData,
+          statusCode: {
+            500: function() {
+              $(".error-message").html("Désolé, quelque chose s'est mal passé. Veuillez réessayer plus tard.").show();
+            }
+          },
+          success: function(data) {
+            console.log(data);
+            //Successfully send message
+            if (data.status) {
+              //Display successful message
+              $(".sent-message").html(data.message).show();
+              //Reset form inputs
+              $(".php-email-form").each(function() {
+                this.reset();
+              });
+            } else {
+              //Display error message
+              $(".error-message").html(data.message).show();
+            }
+          }
+        });
       });
     });
   </script>

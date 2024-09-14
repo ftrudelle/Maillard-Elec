@@ -1,5 +1,3 @@
-<!-- Contact Section -->
-<section id="contact" class="contact section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Contact</h2>
@@ -70,5 +68,3 @@
       <!-- End Contact Form -->
     </div>
   </div>
-</section>
-<!-- /Contact Section -->

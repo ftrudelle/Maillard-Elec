@@ -64,6 +64,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  position: relative;
 }
 
 a {
@@ -1164,16 +1165,16 @@ section,
 }*/
 
 /*--------------------------------------------------------------
-# worksite Section
+# worksites Section
 --------------------------------------------------------------*/
-.worksite .worksite-filters {
+.worksites .worksites-filters {
   padding: 0;
   margin: 0 auto 20px auto;
   list-style: none;
   text-align: center;
 }
 
-.worksite .worksite-filters li {
+.worksites .worksites-filters li {
   cursor: pointer;
   display: inline-block;
   padding: 8px 20px 10px 20px;
@@ -1187,33 +1188,33 @@ section,
   font-family: var(--heading-font);
 }
 
-.worksite .worksite-filters li:hover,
-.worksite .worksite-filters li.filter-active {
+.worksites .worksites-filters li:hover,
+.worksites .worksites-filters li.filter-active {
   color: var(--contrast-color);
   background-color: var(--accent-color);
 }
 
-.worksite .worksite-filters li:first-child {
+.worksites .worksites-filters li:first-child {
   margin-left: 0;
 }
 
-.worksite .worksite-filters li:last-child {
+.worksites .worksites-filters li:last-child {
   margin-right: 0;
 }
 
 @media (max-width: 575px) {
-  .worksite .worksite-filters li {
+  .worksites .worksites-filters li {
     font-size: 14px;
     margin: 0 0 10px 0;
   }
 }
 
-.worksite .worksite-item {
+.worksites .worksite-item {
   position: relative;
   overflow: hidden;
 }
 
-.worksite .worksite-item .worksite-info {
+.worksites .worksite-item .worksite-info {
   opacity: 0;
   position: absolute;
   left: 12px;
@@ -1225,21 +1226,21 @@ section,
   padding: 15px;
 }
 
-.worksite .worksite-item .worksite-info h4 {
+.worksites .worksite-item .worksite-info h4 {
   font-size: 18px;
   font-weight: 600;
   padding-right: 50px;
 }
 
-.worksite .worksite-item .worksite-info p {
+.worksites .worksite-item .worksite-info p {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-size: 14px;
   margin-bottom: 0;
   padding-right: 50px;
 }
 
-.worksite .worksite-item .worksite-info .preview-link,
-.worksite .worksite-item .worksite-info .details-link {
+.worksites .worksite-item .worksite-info .preview-link,
+.worksites .worksite-item .worksite-info .details-link {
   position: absolute;
   right: 50px;
   font-size: 24px;
@@ -1249,17 +1250,17 @@ section,
   line-height: 0;
 }
 
-.worksite .worksite-item .worksite-info .preview-link:hover,
-.worksite .worksite-item .worksite-info .details-link:hover {
+.worksites .worksite-item .worksite-info .preview-link:hover,
+.worksites .worksite-item .worksite-info .details-link:hover {
   color: var(--accent-color);
 }
 
-.worksite .worksite-item .worksite-info .details-link {
+.worksites .worksite-item .worksite-info .details-link {
   right: 14px;
   font-size: 28px;
 }
 
-.worksite .worksite-item:hover .worksite-info {
+.worksites .worksite-item:hover .worksite-info {
   opacity: 1;
   bottom: 0;
 }

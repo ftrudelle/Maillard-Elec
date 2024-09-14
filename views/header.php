@@ -10,19 +10,11 @@
             } ?>
         </a>
         <nav id="navmenu" class="navmenu">
-            <?php if (basename($_SERVER['SCRIPT_FILENAME']) == "index.php") {
-                echo '<ul>
+            <ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#worksite">Chantiers</a></li>
+                <li><a href="#worksites">Chantiers</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>';
-            } else {
-                echo '<ul>
-                <li><a href="../index.php#services">Services</a></li>
-                <li><a href="../index.php#worksite">Chantiers</a></li>
-                <li><a href="../index.php#contact">Contact</a></li>
-            </ul>';
-            } ?>
+            </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
         <div class="header-social-links">
