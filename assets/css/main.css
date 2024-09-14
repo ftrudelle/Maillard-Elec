@@ -23,9 +23,9 @@
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #222222; /* Color for headings, subheadings and title throughout the website */
   /*--accent-color: #34b7a7; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #283385;
   --accent-color-bar: #C65E45;
   --accent-color-button: #EE840E;
-  --accent-color: #283385;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -583,7 +583,8 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  /* background-color: color-mix(in srgb, var(--accent-color), transparent 20%); */
+  background-color: color-mix(in srgb, var(--accent-color-button), transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -1260,7 +1261,8 @@ section,
 
 .worksites .worksite-item .worksite-info .preview-link:hover,
 .worksites .worksite-item .worksite-info .details-link:hover {
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
+  color: var(--accent-color-button);
 }
 
 .worksites .worksite-item .worksite-info .details-link {
@@ -1358,7 +1360,8 @@ section,
   font-size: 20px;
   /* color: var(--accent-color); */
   color: var(--accent-color-button);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 92%); */
+  background: color-mix(in srgb, var(--accent-color-button), transparent 92%);
   width: 44px;
   height: 44px;
   display: flex;
@@ -1416,7 +1419,8 @@ section,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
+  /* border-color: var(--accent-color); */
+  border-color: var(--accent-color-button);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1436,7 +1440,8 @@ section,
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 25%); */
+  background: color-mix(in srgb, var(--accent-color-button), transparent 25%);
 }
 
 /*--------------------------------------------------------------
