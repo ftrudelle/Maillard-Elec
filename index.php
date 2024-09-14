@@ -43,7 +43,7 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
   <?php include('views/header.php'); ?>
 
   <main class="main">
@@ -135,22 +135,36 @@
       });
     });
     //Send Email
-    $("#phpEmailFormSubmitButton").on("click", function(e) {
+    $(".php-email-form").on("submit", function(e) {
       e.preventDefault();
       var formData = $(".php-email-form").serialize();
-      console.log(formData);
       $.ajax({
         type: "POST",
         url: "forms/contact.php",
         dataType: "json", // Add datatype
-        data: formData
-      }).done(function(data) {
-        console.log(data);
-        alert("It's OK!");
-      }).fail(function(data) {
-        console.log(data);
+        data: formData,
+        statusCode: {
+          500: function() {
+            $(".error-message").html("Désolé, quelque chose s'est mal passé. Veuillez réessayer plus tard.").show();
+          }
+        },
+        success: function(data) {
+          console.log(data);
+          //Successfully send message
+          if (data.status) {
+            //Display successful message
+            $(".sent-message").html(data.message).show();
+            //Reset form inputs
+            $(".php-email-form").each(function() {
+              this.reset();
+            });
+          } else {
+            //Display error message
+            $(".error-message").html(data.message).show();
+          }
+        }
       });
-  });
+    });
   </script>
 </body>
 

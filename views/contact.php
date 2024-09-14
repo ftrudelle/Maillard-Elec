@@ -45,24 +45,23 @@
           <div class="row gy-4">
             <div class="col-md-6">
               <label for="name-field" class="pb-2">Votre nom</label>
-              <input type="text" name="name" id="name-field" class="form-control" required="">
+              <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom">
             </div>
             <div class="col-md-6">
               <label for="email-field" class="pb-2">Votre email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required="">
+              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email">
             </div>
             <div class="col-md-12">
               <label for="subject-field" class="pb-2">Sujet</label>
-              <input type="text" class="form-control" name="subject" id="subject-field" required="">
+              <input type="text" class="form-control" name="subject" id="subject-field" required placeholder="Sujet">
             </div>
             <div class="col-md-12">
               <label for="message-field" class="pb-2">Message</label>
-              <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+              <textarea class="form-control" name="message" rows="10" id="message-field" required placeholder="Votre texte"></textarea>
             </div>
             <div class="col-md-12 text-center">
-              <!-- <div class="loading">Chargement</div>
               <div class="error-message"></div>
-              <div class="sent-message">Votre message à été envoyé. Merci !</div> -->
+              <div class="sent-message"></div>
               <button type="submit" id="phpEmailFormSubmitButton">Envoyer</button>
             </div>
           </div>
