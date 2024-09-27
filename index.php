@@ -47,6 +47,11 @@
   <?php include('views/header.php'); ?>
 
   <main class="main">
+    <!-- About section -->
+    <section id="about" class="about section">
+        <?php include('views/about.php'); ?>
+      </section>
+      <!-- End About section -->
     <div class="section-container">
       <!-- Services section -->
       <section id="services" class="services section">

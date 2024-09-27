@@ -11,6 +11,7 @@
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
+            <li><a href="#about">A propos</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#worksites">Chantiers</a></li>
                 <li><a href="#contact">Contact</a></li>
