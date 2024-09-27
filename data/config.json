@@ -3,7 +3,7 @@
     "mail": {
         "host": "smtp.gmail.com",
         "port": 465,
-        "userName" : "trudelle.florian@gmail.com",
-        "password": "vfoj iane tyoi zobt"
+        "userName" : "",
+        "password": ""
     }
 }
