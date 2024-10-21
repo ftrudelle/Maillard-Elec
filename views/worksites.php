@@ -1,7 +1,6 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Chantiers</h2>
-    <p>Voici la liste des chantiers réalisés :</p>
   </div>
   <!-- End Section Title -->
   <div class="container">
@@ -15,7 +14,7 @@
       <!-- End WorkSites Filters -->
       <!-- WorkSites Items List -->
       <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-        <?php include('views/chantiers_articles.php'); ?>
+        <?php include('views/worksites_articles.php'); ?>
       </div>
       <!-- End WorkSites Items List -->
     </div>
