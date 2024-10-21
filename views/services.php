@@ -43,7 +43,7 @@
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item item-teal position-relative">
           <div class="icon">
-            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-lock"></i>
           </div>
           <h3>Alarme</h3>
           <!-- <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p> -->

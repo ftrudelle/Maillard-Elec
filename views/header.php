@@ -3,11 +3,7 @@
         <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!--<h1 class="sitename">Kelly</h1>-->
-            <?php if (basename($_SERVER['SCRIPT_FILENAME']) == "index.php") {
-                echo '<img src="assets/img/logo.png" alt="">';
-            } else {
-                echo '<img src="../assets/img/logo.png" alt="">';
-            } ?>
+           <img src="assets/img/logo.png" alt="">
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
