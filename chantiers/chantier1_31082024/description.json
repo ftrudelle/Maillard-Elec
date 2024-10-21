@@ -1,7 +1,5 @@
 {
   "titre": "Titre test 1",
   "categorie": "Habitation",
-  "client": "Moi même",
-  "date": "31/08/2024",
   "description": "Test de création d'article de chantier dynamique."
 }

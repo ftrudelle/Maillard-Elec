@@ -34,14 +34,6 @@ echo '<!-- worksite Details Section -->
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="worksite-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Catégorie</strong>: ' . $worksite_description->categorie . '</li>
-                <li><strong>Client</strong>: ' . $worksite_description->client . '</li>
-                <li><strong>Date du projet</strong>: ' . $worksite_description->date . '</li>
-              </ul>
-            </div>
             <div class="worksite-description" data-aos="fade-up" data-aos-delay="300">
               <h2>Description</h2>
               <p>' . $worksite_description->description . '</p>
