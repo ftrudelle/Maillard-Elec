@@ -12,9 +12,9 @@ $age = date("Y") - explode("/", $conf->birthday)[2];
 <!-- End Section Title -->
 <div class="container" data-aos="fade-up" data-aos-delay="100">
   <div class="row gy-4 justify-content-center">
-    <!-- <div class="col-lg-4">
-      <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-    </div> -->
+    <div class="col-lg-4">
+      <img src="assets/img/logo_small.png" class="img-fluid" alt="">
+    </div>
     <div class="col-lg-8 content">
       <h3 class="text-center">Electricien</h2>
       <p class="fst-italic py-3 text-center">
