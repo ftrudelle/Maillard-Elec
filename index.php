@@ -47,11 +47,6 @@
   <?php include('views/header.php'); ?>
 
   <main class="main">
-    <!-- About section -->
-    <section id="about" class="about section">
-        <?php include('views/about.php'); ?>
-      </section>
-      <!-- End About section -->
     <div class="section-container">
       <!-- Services section -->
       <section id="services" class="services section">
@@ -63,6 +58,11 @@
         <?php include('views/worksites.php'); ?>
       </section>
       <!-- End worksites section -->
+      <!-- About section -->
+      <section id="about" class="about section">
+        <?php include('views/about.php'); ?>
+      </section>
+      <!-- End About section -->
       <!-- Contact section -->
       <section id="contact" class="contact section">
         <?php include('views/contact.php'); ?>

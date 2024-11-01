@@ -3,13 +3,13 @@
         <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!--<h1 class="sitename">Kelly</h1>-->
-           <img src="assets/img/logo.png" alt="">
+            <img src="assets/img/logo.png" alt="">
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
-            <li><a href="#about">A propos</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#worksites">Chantiers</a></li>
+                <li><a href="#about">A propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

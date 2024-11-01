@@ -1,4 +1,4 @@
-<?php 
+<?php
 //Get confing file
 $conf = json_decode(file_get_contents("data/info.json"));
 //Calculate the age
@@ -17,28 +17,14 @@ $age = date("Y") - explode("/", $conf->birthday)[2];
     </div>
     <div class="col-lg-8 content">
       <h3 class="text-center">Electricien</h2>
-      <p class="fst-italic py-3 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-      </p>
-      <div class="row">
-        <div class="col-lg-6">
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <strong>Anniversaire :</strong> <span><?php echo $conf->birthday; ?></span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Ville :</strong> <span><?php echo $conf->addresse; ?></span></li>
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <strong>Âge :</strong> <span><?php echo $age; ?></span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Diplôme :</strong> <span>Licence</span></li>
-          </ul>
-        </div>
-      </div>
-      <p class="py-3 text-center">
-        Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-        Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-      </p>
+        <p class="fst-italic py-3 text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+        <p class="py-3 text-center">
+          Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+          Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+        </p>
     </div>
   </div>
 </div>
