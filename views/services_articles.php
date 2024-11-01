@@ -20,7 +20,9 @@ foreach ($services as $service) {
             <i class="fa-solid '.$service_infos->icon.'" style="color:'.$service_infos->icon_color.';"></i>
           </div>
           <h3>'.$service_infos->titre.'</h3>
-          <p>'.$service_infos->description.'</p>
+          <div class="service-description">
+            <p>'.$service_infos->description.'</p>
+          </div>
         </div>
       </div>
       <!-- End Service Item -->';
