@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title><?php echo json_decode(file_get_contents("./data/info.json"))->entrepriseName; ?></title>
+  <title><?php echo json_decode(file_get_contents("./data/info.json"))->info->entrepriseName; ?></title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 

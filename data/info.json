@@ -1,12 +1,18 @@
 {
+  "info": {
     "entrepriseName": "Maillard Electricité",
     "fullName": "Maillard Maxime",
     "lastName": "Maillard",
-    "firstName": "Maxime",
-    "facebook": "https://www.facebook.com/EURLMaillardElectricite/",
-    "addresse":"Le Bourg, 61250, Pacé",
-    "telephone":"06 37 29 56 67",
-    "email":"maillardelec@gmail.com",
-    "birthday":"10/10/1910",
-    "emailTest":"trudelle.florian@gmail.com"
+    "firstName": "Maxime"
+  },
+  "about":{
+    "1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque."
+  },
+  "contact": {
+    "addresse": "Le Bourg, 61250, Pacé",
+    "telephone": "06 37 29 56 67",
+    "email": "maillardelec@gmail.com"
+  },
+  "facebook": "https://www.facebook.com/EURLMaillardElectricite/",
+  "emailTest": "trudelle.florian@gmail.com"
 }

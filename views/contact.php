@@ -1,7 +1,6 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Contact</h2>
-    <p>Besoin d'un renseignement ou d'un devis ? Contactez-moi !</p>
   </div>
   <!-- End Section Title -->
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -13,7 +12,7 @@
             <i class="bi bi-geo-alt flex-shrink-0"></i>
             <div>
               <h3>Adresse</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->addresse; ?></p>
+              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->addresse; ?></p>
             </div>
           </div>
           <!-- End Info Item -->
@@ -22,7 +21,7 @@
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
               <h3>M'appeler</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->telephone; ?></p>
+              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->telephone; ?></p>
             </div>
           </div>
           <!-- End Info Item -->
@@ -31,7 +30,7 @@
             <i class="bi bi-envelope flex-shrink-0"></i>
             <div>
               <h3>M'envoyer un email</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->email; ?></p>
+              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->email; ?></p>
             </div>
           </div>
           <!-- End Info Item -->
