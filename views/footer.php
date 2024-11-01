@@ -5,10 +5,8 @@
             </p>
         </div>
         <div class="social-links d-flex justify-content-center">
-            <!-- <a href="" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a> -->
+            <a href="<?php echo json_decode(file_get_contents("./data/info.json"))->google; ?>" class="google" target="_blank"><i class="bi bi-google"></i></a>
             <a href="<?php echo json_decode(file_get_contents("./data/info.json"))->facebook; ?>" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-            <!-- <a href="" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a> -->
-            <!-- <a href="" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a> -->
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->

@@ -8,15 +8,6 @@
       <div class="col-lg-5">
         <div class="info-wrap">
           <!-- Info Item -->
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h3>Rayon d'action</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->actionArea; ?></p>
-            </div>
-          </div>
-          <!-- End Info Item -->
-          <!-- Info Item -->
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
@@ -33,8 +24,19 @@
               <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->email; ?></p>
             </div>
           </div>
-          <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Alençon&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <!-- End Info Item -->
+          <!-- Info Item -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Rayon d'action</h3>
+              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->actionArea; ?></p>
+            </div>
+          </div>
+          <!-- End Info Item -->
+          <!-- Embedded map Item -->
+          <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Alençon&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- End Embedded map Item -->
         </div>
       </div>
       <div class="col-lg-7">
