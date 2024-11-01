@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="col-lg-7">
-        <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form method="post" class="php-email-form" id="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
             <div class="col-md-6">
               <label for="name-field" class="pb-2">Votre nom</label>
@@ -57,6 +57,9 @@
             <div class="col-md-12">
               <label for="message-field" class="pb-2">Message</label>
               <textarea class="form-control" name="message" rows="10" id="message-field" required placeholder="Votre texte"></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+            <div class="g-recaptcha" data-sitekey="<?php echo json_decode(file_get_contents("./data/config.json"))->reCaptchaAPIKey; ?>" style="display: inline-block;"></div>
             </div>
             <div class="col-md-12 text-center">
               <div class="error-message"></div>

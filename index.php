@@ -104,6 +104,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Main JS File -->
   <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -166,7 +167,8 @@
             }
           },
           success: function(data) {
-            console.log(data);
+            $(".sent-message").hide();
+            $(".error-message").hide();
             //Successfully send message
             if (data.status) {
               //Display successful message
