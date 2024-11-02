@@ -23,7 +23,7 @@ foreach ($worksites as $worksite) {
         <img src="' . $worksite_images[0] . '" class="img-fluid" alt="">
         <div class="worksite-info">
           <h4>' . $worksite_description->titre . '</h4>
-          <a class="details-link" href="views/worksites_details.php?description=' . $worksite_subfolder[0] . '&images=' . $worksite_subfolder[1] . '" data-toggle="modal" data-target="#worksiteDetailModal" title="Plus de détails"><i class="fa-solid fa-plus"></i></a>
+          <a class="details-link" href="views/worksites_details.php?description=' . $worksite_subfolder[0] . '&amp;images=' . $worksite_subfolder[1] . '" data-toggle="modal" data-target="#worksiteDetailModal" title="Plus de détails"><i class="fa-solid fa-plus"></i></a>
         </div>
       </div>';
 }

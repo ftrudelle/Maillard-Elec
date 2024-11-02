@@ -35,7 +35,7 @@
           </div>
           <!-- End Info Item -->
           <!-- Embedded map Item -->
-          <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Alençon&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Alen%C3%A7on&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="border:0;width:100%;height:270px;border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <!-- End Embedded map Item -->
         </div>
       </div>
@@ -44,11 +44,11 @@
           <div class="row gy-4">
             <div class="col-md-6">
               <label for="name-field" class="pb-2">Votre nom</label>
-              <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom">
+              <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom" autocomplete="off">
             </div>
             <div class="col-md-6">
               <label for="email-field" class="pb-2">Votre email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email">
+              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email" autocomplete="off">
             </div>
             <div class="col-md-12">
               <label for="subject-field" class="pb-2">Sujet</label>
