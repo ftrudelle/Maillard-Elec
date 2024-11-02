@@ -15,6 +15,38 @@ $conf = json_decode(file_get_contents("../data/config.json"));
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 $mail->setLanguage('fr', '../assets/vendor/PHPMailer-6.9.1/language/phpmailer.lang-fr.php/');
+$mail->isSMTP();
+//Enable SMTP debugging
+//SMTP::DEBUG_OFF = off (for production use)
+//SMTP::DEBUG_CLIENT = client messages
+//SMTP::DEBUG_SERVER = client and server messages
+if ($conf->env == "test" || $conf->env == "prod") {
+  $mail->SMTPDebug = SMTP::DEBUG_OFF;
+} else {
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+}
+//Set the hostname of the mail server
+$mail->Host = $conf->mail->host;
+//Set the SMTP port number:
+// - 465 for SMTP with implicit TLS, a.k.a. RFC8314 SMTPS or
+// - 587 for SMTP+STARTTLS
+$mail->Port = $conf->mail->port;
+//Set the encryption mechanism to use:
+//PHPMailer::ENCRYPTION_SMTPS (implicit TLS on port 465) or
+//PHPMailer::ENCRYPTION_STARTTLS (explicit TLS on port 587)
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+$mail->Username = $conf->mail->userName;
+//Password to use for SMTP authentication
+$mail->Password = $conf->mail->password;
+$mail->CharSet = PHPMailer::CHARSET_UTF8;
+
+//It's important not to use the submitter's address as the from address as it's forgery,
+//which will cause your messages to fail SPF checks.
+//Use an address in your own domain as the from address, put the submitter's address in a reply-to
+$mail->setFrom('contact@example.com', (empty($name) ? 'Formulaire de contacte' : $name));
 
 $err = false;
 $msg = "";
@@ -23,10 +55,10 @@ $name = "";
 $email = "";
 $subject = "";
 $message = "";
-$to = json_decode(file_get_contents("../data/info.json"))->contact->emailTest;
+$to = $conf->mail->emailTest;
 
 //reCaptcha validation
-$recaptcha = new \ReCaptcha\ReCaptcha(json_decode(file_get_contents("../data/config.json"))->reCaptchaAPIKeySecret);
+$recaptcha = new \ReCaptcha\ReCaptcha($conf->reCaptchaAPIKeySecret);
 $resp = $recaptcha->verify($_POST['g-recaptcha-response']);
 if ($resp->isSuccess()) {
   if (array_key_exists('email', $_POST)) {
@@ -62,41 +94,6 @@ if ($resp->isSuccess()) {
       $msg .= 'Erreur: Addresse mail invalide.\n';
       $err = true;
     }
-
-    //Create a new PHPMailer instance
-    $mail = new PHPMailer();
-    $mail->isSMTP();
-    //Enable SMTP debugging
-    //SMTP::DEBUG_OFF = off (for production use)
-    //SMTP::DEBUG_CLIENT = client messages
-    //SMTP::DEBUG_SERVER = client and server messages
-    if ($conf->env == "test" || $conf->env == "prod") {
-      $mail->SMTPDebug = SMTP::DEBUG_OFF;
-    } else {
-      $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    }
-    //Set the hostname of the mail server
-    $mail->Host = $conf->mail->host;
-    //Set the SMTP port number:
-    // - 465 for SMTP with implicit TLS, a.k.a. RFC8314 SMTPS or
-    // - 587 for SMTP+STARTTLS
-    $mail->Port = $conf->mail->port;
-    //Set the encryption mechanism to use:
-    //PHPMailer::ENCRYPTION_SMTPS (implicit TLS on port 465) or
-    //PHPMailer::ENCRYPTION_STARTTLS (explicit TLS on port 587)
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    //Whether to use SMTP authentication
-    $mail->SMTPAuth = true;
-    //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = $conf->mail->userName;
-    //Password to use for SMTP authentication
-    $mail->Password = $conf->mail->password;
-    $mail->CharSet = PHPMailer::CHARSET_UTF8;
-
-    //It's important not to use the submitter's address as the from address as it's forgery,
-    //which will cause your messages to fail SPF checks.
-    //Use an address in your own domain as the from address, put the submitter's address in a reply-to
-    $mail->setFrom('contact@example.com', (empty($name) ? 'Formulaire de contacte' : $name));
 
     $mail->addAddress($to);
 

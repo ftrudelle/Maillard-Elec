@@ -44,11 +44,11 @@
           <div class="row gy-4">
             <div class="col-md-6">
               <label for="name-field" class="pb-2">Votre nom</label>
-              <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom" autocomplete="off">
+              <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom" autocomplete="on">
             </div>
             <div class="col-md-6">
               <label for="email-field" class="pb-2">Votre email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email" autocomplete="off">
+              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email" autocomplete="on">
             </div>
             <div class="col-md-12">
               <label for="subject-field" class="pb-2">Sujet</label>
