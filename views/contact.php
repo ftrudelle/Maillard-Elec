@@ -33,7 +33,8 @@
           </div>
           <!-- End Info Item -->
           <!-- Embedded map Item -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21178.621668707015!2d0.07165841405110893!3d48.43104988712926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e20b7e7ae11fff%3A0x7d8429d95e5d1f4!2zQWxlbsOnb24!5e0!3m2!1sfr!2sfr!4v1730626368616!5m2!1sfr!2sfr" style="border:0;width:100%;height:270px;border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21178.621668707015!2d0.07165841405110893!3d48.43104988712926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e20b7e7ae11fff%3A0x7d8429d95e5d1f4!2zQWxlbsOnb24!5e0!3m2!1sfr!2sfr!4v1730626368616!5m2!1sfr!2sfr" 
+              style="border:0;width:100%;height:270px;border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <!-- End Embedded map Item -->
         </div>
       </div>
@@ -45,16 +46,20 @@
               <input type="text" name="name" id="name-field" class="form-control" required placeholder="Nom" autocomplete="on">
             </div>
             <div class="col-md-6">
-              <label for="email-field" class="pb-2">Votre email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required placeholder="Addresse email" autocomplete="on">
+              <label for="phone-field" class="pb-2">Votre numéro de téléphone</label>
+              <input type="tel" name="phone" id="phone-field" class="form-control" placeholder="Numéro de téléphone" autocomplete="off">
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+              <label for="email-field" class="pb-2">Votre email</label>
+              <input type="email" name="email" id="email-field" class="form-control" required placeholder="Addresse email" autocomplete="on">
+            </div>
+            <div class="col-md-6">
               <label for="subject-field" class="pb-2">Sujet</label>
-              <input type="text" class="form-control" name="subject" id="subject-field" required placeholder="Sujet">
+              <input type="text" name="subject" id="subject-field" class="form-control" required placeholder="Sujet">
             </div>
             <div class="col-md-12">
               <label for="message-field" class="pb-2">Message</label>
-              <textarea class="form-control" name="message" rows="10" id="message-field" required placeholder="Votre texte"></textarea>
+              <textarea name="message" id="message-field" class="form-control" rows="10" required placeholder="Votre texte"></textarea>
             </div>
             <div class="col-md-12 text-center">
               <div class="g-recaptcha" data-sitekey="<?php echo json_decode(file_get_contents("./data/config.json"))->reCaptchaAPIKey; ?>" style="display: inline-block;"></div>

@@ -178,6 +178,8 @@
               $(".php-email-form").each(function() {
                 this.reset();
               });
+              //Reset reCaptcha
+              grecaptcha.reset();
             } else {
               //Display error message
               $(".error-message").html(data.message).show();

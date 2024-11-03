@@ -11,10 +11,12 @@ require '../assets/vendor/recaptcha-master/src/autoload.php';
 
 //Get config
 $conf = json_decode(file_get_contents("../data/config.json"));
+$info = json_decode(file_get_contents("../data/info.json"));
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 $mail->setLanguage('fr', '../assets/vendor/PHPMailer-6.9.1/language/phpmailer.lang-fr.php/');
+$mail->CharSet = PHPMailer::CHARSET_UTF8;
 $mail->isSMTP();
 //Enable SMTP debugging
 //SMTP::DEBUG_OFF = off (for production use)
@@ -41,12 +43,6 @@ $mail->SMTPAuth = true;
 $mail->Username = $conf->mail->userName;
 //Password to use for SMTP authentication
 $mail->Password = $conf->mail->password;
-$mail->CharSet = PHPMailer::CHARSET_UTF8;
-
-//It's important not to use the submitter's address as the from address as it's forgery,
-//which will cause your messages to fail SPF checks.
-//Use an address in your own domain as the from address, put the submitter's address in a reply-to
-$mail->setFrom('contact@example.com', (empty($name) ? 'Formulaire de contacte' : $name));
 
 $err = false;
 $msg = "";
@@ -55,7 +51,7 @@ $name = "";
 $email = "";
 $subject = "";
 $message = "";
-$to = $conf->mail->emailTest;
+$phone = "";
 
 //reCaptcha validation
 $recaptcha = new \ReCaptcha\ReCaptcha($conf->reCaptchaAPIKeySecret);
@@ -69,15 +65,27 @@ if ($resp->isSuccess()) {
     if (array_key_exists('subject', $_POST)) {
       $subject = substr(strip_tags($_POST['subject']), 0, 255);
     } else {
-      $subject = 'Aucun sujet';
+      $msg .= 'Erreur: Aucun sujet.\n';
+      $err = true;
     }
+
+    //Apply some basic validation and filtering to the telephone number
+    if (array_key_exists('phone', $_POST)) {
+      if (preg_match("#^(\d{2}[ \.]?){4}\d{2}$#", $_POST['phone'])) {
+        $phone = $_POST['phone'];
+      } else {
+        $msg .= 'Erreur: Numéro de téléphone invalide.\n';
+        $err = true;
+      }
+    }
+
     //Apply some basic validation and filtering to the query
     if (array_key_exists('message', $_POST)) {
       //Limit length and strip HTML tags
       $message = substr(strip_tags($_POST['message']), 0, 16384);
     } else {
       $message = '';
-      $msg = 'Aucun message.\n';
+      $msg = 'Erreur: Aucun message.\n';
       $err = true;
     }
     //Apply some basic validation and filtering to the name
@@ -85,8 +93,10 @@ if ($resp->isSuccess()) {
       //Limit length and strip HTML tags
       $name = substr(strip_tags($_POST['name']), 0, 255);
     } else {
-      $name = '';
+      $msg .= 'Erreur: Aucun nom.\n';
+      $err = true;
     }
+
     //Make sure the address they provided is valid before trying to use it
     if (array_key_exists('email', $_POST) && PHPMailer::validateAddress($_POST['email'])) {
       $email = $_POST['email'];
@@ -95,14 +105,21 @@ if ($resp->isSuccess()) {
       $err = true;
     }
 
-    $mail->addAddress($to);
+    //It's important not to use the submitter's address as the from address as it's forgery,
+    //which will cause your messages to fail SPF checks.
+    //Use an address in your own domain as the from address, put the submitter's address in a reply-to
+    $mail->setFrom($conf->mail->userName, $name);
+    //Setting receiver adress mail for production environment
+    // $mail->addAddress($info->contact->email);
+    //Setting receiver adress mail for dev and test  environment
+    $mail->addAddress($conf->mail->emailTest);
 
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
-    if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-      $mail->Subject = $subject;
-      $mail->Body = $message;
+    if ($mail->addReplyTo($email, $name)) {
+      $mail->Subject = "Formulaire de contact via le site web : " . $subject;
+      $mail->Body = "Nom : " . $name . "\r\nMail : " . $email . "\r\nNuméro de téléphone : " . $phone . "\r\nSujet : " . $subject . "\r\nMessage : \r\n" . $message;
 
       //Send the message, check for errors
       if (!$mail->send()) {
@@ -114,18 +131,18 @@ if ($resp->isSuccess()) {
 
         $response = [
           "status" => false,
-          "message" => 'Désolé, quelque chose s\'est mal passé. Veuillez réessayer plus tard.'
+          "message" => 'Désolé, quelque chose s\'est mal passé lors l\'envoi du mail. Veuillez réessayer plus tard.'
         ];
       } else {
         $response = [
           "status" => true,
-          "message" => 'Message envoyé, merci de m\'avoir contacté !'
+          "message" => 'Message envoyé !'
         ];
       }
     } else {
       $response = [
         "status" => false,
-        "message" => 'Addresse mail invalide, message ignoré.'
+        "message" => 'Erreur: Addresse mail invalide.'
       ];
     }
 
@@ -138,7 +155,7 @@ if ($resp->isSuccess()) {
 } else {
   echo json_encode([
     "status" => false,
-    "message" => 'Google reCaptcha invalide, message ignoré.'
+    "message" => 'Erreur: Google reCaptcha invalide.'
   ]);
   exit();
 }

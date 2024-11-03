@@ -1,2 +1,3 @@
 # ignore config file
 data/config.json
+data/old_config.json
