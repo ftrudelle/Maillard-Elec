@@ -11,8 +11,7 @@
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
-              <h3>M'appeler</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->telephone; ?></p>
+              <h3 style="margin-bottom:0;margin-top:8px;"><?php echo json_decode(file_get_contents("./data/info.json"))->contact->telephone; ?></h3>
             </div>
           </div>
           <!-- End Info Item -->
@@ -20,8 +19,7 @@
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <i class="bi bi-envelope flex-shrink-0"></i>
             <div>
-              <h3>M'envoyer un email</h3>
-              <p><?php echo json_decode(file_get_contents("./data/info.json"))->contact->email; ?></p>
+              <h3 style="margin-bottom:0;margin-top:8px;"><?php echo json_decode(file_get_contents("./data/info.json"))->contact->email; ?></h3>
             </div>
           </div>
           <!-- End Info Item -->
@@ -35,7 +33,7 @@
           </div>
           <!-- End Info Item -->
           <!-- Embedded map Item -->
-          <iframe src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Alen%C3%A7on&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="border:0;width:100%;height:270px;border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21178.621668707015!2d0.07165841405110893!3d48.43104988712926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e20b7e7ae11fff%3A0x7d8429d95e5d1f4!2zQWxlbsOnb24!5e0!3m2!1sfr!2sfr!4v1730626368616!5m2!1sfr!2sfr" style="border:0;width:100%;height:270px;border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <!-- End Embedded map Item -->
         </div>
       </div>
@@ -59,7 +57,7 @@
               <textarea class="form-control" name="message" rows="10" id="message-field" required placeholder="Votre texte"></textarea>
             </div>
             <div class="col-md-12 text-center">
-            <div class="g-recaptcha" data-sitekey="<?php echo json_decode(file_get_contents("./data/config.json"))->reCaptchaAPIKey; ?>" style="display: inline-block;"></div>
+              <div class="g-recaptcha" data-sitekey="<?php echo json_decode(file_get_contents("./data/config.json"))->reCaptchaAPIKey; ?>" style="display: inline-block;"></div>
             </div>
             <div class="col-md-12 text-center">
               <div class="error-message"></div>
