@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?php echo json_decode(file_get_contents("./data/info.json"))->info->entrepriseName; ?></title>
-  <meta name="description" content="">
+  <meta name="description" content="Site vitrine de l'entreprise Maillard Electricité">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
@@ -74,7 +74,7 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h1 class="modal-title"></h1>
+            <h3 class="modal-title"></h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">

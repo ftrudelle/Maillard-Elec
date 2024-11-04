@@ -22,8 +22,8 @@ foreach ($worksites as $worksite) {
   echo '<div class="col-lg-4 col-md-6 worksite-item isotope-item filter-' . strtolower($worksite_description->categorie) . '">
         <img src="' . $worksite_images[0] . '" class="img-fluid" alt="">
         <div class="worksite-info">
-          <h4>' . $worksite_description->titre . '</h4>
-          <a class="details-link" href="views/worksites_details.php?description=' . $worksite_subfolder[0] . '&amp;images=' . $worksite_subfolder[1] . '" data-toggle="modal" data-target="#worksiteDetailModal" title="Plus de détails"><i class="fa-solid fa-plus"></i></a>
+          <h3>' . $worksite_description->titre . '</h3>
+          <a class="details-link" href="views/worksites_details.php?titre='.$worksite_description->titre.'&amp;description=' . $worksite_subfolder[0] . '&amp;images=' . $worksite_subfolder[1] . '" data-toggle="modal" data-target="#worksiteDetailModal" title="Plus de détails"><i class="fa-solid fa-plus"></i></a>
         </div>
       </div>';
 }
