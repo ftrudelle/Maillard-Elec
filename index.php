@@ -132,7 +132,7 @@
           async: 'false',
           success: function(response) {
             //Adding workwite title in modal title
-            $(".modal-title").html(<?php echo json_encode($worksite_description->titre); ?>);
+            $(".modal-title").html(<?php echo json_encode($worksiteDescription->titre); ?>);
             //Adding details text in modal body
             $('.modal-body').html(response);
             $('#worksiteDetailModal').modal('show');
