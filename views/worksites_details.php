@@ -15,7 +15,7 @@ $worksiteImages = glob("../" . $images . '/*');
 // Création des images dans l'article
 $imageString = "";
 foreach ($worksiteImages as $worksiteImage) {
-  $imageString .= '<div class="swiper-slide"><img src="'.substr($worksiteImage, 3).'" alt="Image prise sur le chantier : '.$titre.'" style="width:715px;height:535px;object-fit: contain;"></div>';
+  $imageString .= '<div class="swiper-slide"><img src="'.substr($worksiteImage, 3).'" alt="Image prise sur le chantier : '.$titre.'" style="width:655px;height:492px;object-fit: contain;"></div>';
 }
 // Envoi des articles de chantier dans la page
 echo '<!-- worksite Details Section -->
