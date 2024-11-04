@@ -5,8 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?php echo json_decode(file_get_contents("./data/info.json"))->info->entrepriseName; ?></title>
-  <meta name="description" content="Site vitrine de l'entreprise Maillard Electricité">
-  <meta name="keywords" content="">
+  <meta name="description" content="<?php echo json_decode(file_get_contents("./data/info.json"))->info->descriptionTag; ?>">
+  <meta name="keywords" content="Maillard Electricité, Electricien, Alençon (61000), Electricité">
+  <meta name="geo.region" content="FR-61" />
+  <meta name="geo.placename" content="Alen&ccedil;on" />
+  <meta name="geo.position" content="48.430384;0.090201" />
+  <meta name="ICBM" content="48.430384, 0.090201" />
+  <meta name="google" content="nositelinkssearchbox">
+
+
 
   <!-- Favicons -->
   <link href="assets/img/logo.ico" rel="icon">
