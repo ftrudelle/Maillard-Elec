@@ -2,5 +2,6 @@
   "titre": "Electricité",
   "description": "Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.",
   "icon": "fa-house-chimney-crack",
-  "icon_color": "#0dcaf0"
+  "icon_color": "#0dcaf0",
+  "order": 1
 }

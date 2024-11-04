@@ -2,5 +2,6 @@
   "titre": "Alarme",
   "description": "Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.",
   "icon": "fa-lock",
-  "icon_color": "#20c997"
+  "icon_color": "#20c997",
+  "order": 5
 }

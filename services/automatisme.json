@@ -2,5 +2,6 @@
   "titre": "Automatisme",
   "description": "Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.",
   "icon": "fa-cogs",
-  "icon_color": "#fd7e14"
+  "icon_color": "#fd7e14",
+  "order": 3
 }
