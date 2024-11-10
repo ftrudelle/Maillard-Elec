@@ -1,8 +1,7 @@
 <footer id="footer" class="footer light-background">
     <div class="container">
-        <div class="copyright text-center ">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Maillard Electricité</strong> <span>Tous droits réservés<br></span>
-            </p>
+        <div class="copyright text-center">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Maillard Electricité</strong> <span>Tous droits réservés</span> - <a href="mentions_legales.php">Mentions Légales</a><br></p>
         </div>
         <div class="social-links d-flex justify-content-center">
             <a href="<?php echo json_decode(file_get_contents("./data/info.json"))->google; ?>" class="google" target="_blank"><i class="bi bi-google"></i></a>
