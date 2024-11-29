@@ -350,6 +350,12 @@ h6 {
     left: -100%;
     visibility: visible;
   }
+
+  .worksiteImg{
+    width:655px;
+    height:492px;
+    object-fit: contain;
+  }
 }
 
 /* Mobile Navigation */
@@ -476,6 +482,10 @@ h6 {
 
   .mobile-nav-active .navmenu>ul {
     display: block;
+  }
+
+  .worksiteImg{
+    object-fit: contain;
   }
 }
 
