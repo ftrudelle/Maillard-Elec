@@ -8,7 +8,7 @@
                 <?php
                 if (basename($_SERVER['PHP_SELF']) == "index.php") {
                     echo '<li><a href="#services">Services</a></li>
-                <li><a href="#worksites">Chantiers</a></li>
+                <li><a href="#worksites">Réalisations</a></li>
                 <li><a href="#about">A propos</a></li>
                 <li><a href="#contact">Contact</a></li>';
                 } else {

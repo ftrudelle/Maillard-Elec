@@ -1,6 +1,6 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Chantiers</h2>
+    <h2>Réalisations</h2>
   </div>
   <!-- End Section Title -->
   <div class="container">
