@@ -1,0 +1,7 @@
+{
+  "titre": "Exemple",
+  "description": "Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.",
+  "icon": "Icone a chopisir sur https://fontawesome.com/ ne prendre que la deuxième partie fa-lock par exemple",
+  "icon_color": "Couleur en hexadécimale sur https://htmlcolorcodes.com/fr/ ou autre site, prendre le code couleur commençant par #, exemple : #ff5733",
+  "order": 5
+}
